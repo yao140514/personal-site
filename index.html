@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>林一舟 — 开发者 · 创作者</title>
+  <meta name="description" content="林一舟的个人网站：关于我、技能、精选项目与联系方式。">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f6">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#161310">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b23c1f'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='%23faf9f6' font-family='serif'%3E%E6%9E%97%3C/text%3E%3C/svg%3E">
+  <script>
+    // 主题初始化：在绘制前完成，避免闪烁
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") {
+        t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" id="brand"></a>
+      <nav class="nav" aria-label="主导航">
+        <a href="#about">关于</a>
+        <a href="#projects">项目</a>
+        <a href="#contact">联系</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="切换深浅色主题" aria-pressed="false">
+          <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <path d="M12 2.5v2.4M12 19.1v2.4M4.3 4.3l1.7 1.7M18 18l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.3 19.7L6 18M18 6l1.7-1.7"></path>
+          </svg>
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.4 14.6A8.6 8.6 0 0 1 9.4 3.6a.7.7 0 0 0-.9-.9 10.2 10.2 0 1 0 12.8 12.8.7.7 0 0 0-.9-.9Z"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 首屏 -->
+    <section class="hero container" id="top" aria-labelledby="hero-name">
+      <div class="hero-monogram" id="hero-monogram" aria-hidden="true"></div>
+      <p class="hero-eyebrow" id="hero-eyebrow"></p>
+      <h1 class="hero-name" id="hero-name"></h1>
+      <p class="hero-tagline" id="hero-tagline"></p>
+      <p class="hero-intro" id="hero-intro"></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">查看项目</a>
+        <a class="btn btn-ghost" href="#contact">与我联系</a>
+      </div>
+      <p class="hero-meta" id="hero-meta"></p>
+    </section>
+
+    <!-- 关于 / 技能 -->
+    <section class="section container" id="about" aria-labelledby="about-heading">
+      <header class="section-head">
+        <span class="section-index" aria-hidden="true">01</span>
+        <h2 id="about-heading">关于</h2>
+      </header>
+      <div class="section-body" id="about-body"></div>
+    </section>
+
+    <!-- 精选项目 -->
+    <section class="section container" id="projects" aria-labelledby="projects-heading">
+      <header class="section-head">
+        <span class="section-index" aria-hidden="true">02</span>
+        <h2 id="projects-heading">精选项目</h2>
+      </header>
+      <div class="project-grid" id="project-grid"></div>
+    </section>
+
+    <!-- 联系 -->
+    <section class="section container" id="contact" aria-labelledby="contact-heading">
+      <header class="section-head">
+        <span class="section-index" aria-hidden="true">03</span>
+        <h2 id="contact-heading">联系</h2>
+      </header>
+      <div class="section-body contact-body" id="contact-body">
+        <p class="contact-lead" id="contact-lead"></p>
+        <a class="contact-email" id="contact-email" href="#"></a>
+        <ul class="social-list" id="social-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-line" id="footer-line"></p>
+      <a class="to-top" href="#top">回到顶部 ↑</a>
+    </div>
+  </footer>
+
+  <noscript>
+    <p style="padding:2rem;text-align:center">本站内容需要启用 JavaScript 才能完整呈现，您也可以通过邮箱与我取得联系。</p>
+  </noscript>
+
+  <script src="./site.config.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
