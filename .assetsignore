@@ -1,0 +1,12 @@
+# 不上传到 Cloudflare 的文件
+.git
+.gitignore
+.assetsignore
+wrangler.jsonc
+_headers
+conversation-log.md
+*.bak
+*.txt
+node_modules
+.wrangler
+cloud-drive
